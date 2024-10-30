@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class MyHomePage extends StatelessWidget {
-  final String npm = '2306152166'; // NPM
-  final String name = 'Brian Altan'; // Nama
+  final String npm = '2306259963'; // NPM
+  final String name = 'Andreas Timothy'; // Nama
   final String className = 'PBP E'; // Kelas
   MyHomePage({super.key});
 
@@ -92,12 +92,11 @@ class MyHomePage extends StatelessWidget {
   }
 }
 
-
 class InfoCard extends StatelessWidget {
   // Kartu informasi yang menampilkan title dan content.
 
-  final String title;  // Judul kartu.
-  final String content;  // Isi kartu.
+  final String title; // Judul kartu.
+  final String content; // Isi kartu.
 
   const InfoCard({super.key, required this.title, required this.content});
 
@@ -108,7 +107,8 @@ class InfoCard extends StatelessWidget {
       elevation: 2.0,
       child: Container(
         // Mengatur ukuran dan jarak di dalam kartu.
-        width: MediaQuery.of(context).size.width / 3.5, // menyesuaikan dengan lebar device yang digunakan.
+        width: MediaQuery.of(context).size.width /
+            3.5, // menyesuaikan dengan lebar device yang digunakan.
         padding: const EdgeInsets.all(16.0),
         // Menyusun title dan content secara vertikal.
         child: Column(
@@ -133,13 +133,12 @@ class ItemHomepage {
   ItemHomepage(this.name, this.icon);
 }
 
-
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
 
-  final ItemHomepage item; 
-  
-  const ItemCard(this.item, {super.key}); 
+  final ItemHomepage item;
+
+  const ItemCard(this.item, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -148,16 +147,15 @@ class ItemCard extends StatelessWidget {
       color: Theme.of(context).colorScheme.secondary,
       // Membuat sudut kartu melengkung.
       borderRadius: BorderRadius.circular(12),
-      
+
       child: InkWell(
         // Aksi ketika kartu ditekan.
         onTap: () {
           // Menampilkan pesan SnackBar saat kartu ditekan.
           ScaffoldMessenger.of(context)
             ..hideCurrentSnackBar()
-            ..showSnackBar(
-              SnackBar(content: Text("Kamu telah menekan tombol ${item.name}!"))
-            );
+            ..showSnackBar(SnackBar(
+                content: Text("Kamu telah menekan tombol ${item.name}!")));
         },
         // Container untuk menyimpan Icon dan Text
         child: Container(
@@ -185,5 +183,4 @@ class ItemCard extends StatelessWidget {
       ),
     );
   }
-  
 }
